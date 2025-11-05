@@ -45,6 +45,9 @@ img {
     max-width: 100%;
     object-fit: cover;
 }
+svg {
+    display: block;
+}
 
 .container {
     width: 100%;
@@ -97,6 +100,24 @@ img {
     color: #2e2f42;
 
     padding: 24px 0;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu li {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.current-nav .nav-ref{
+    color: #404bbf;
+}
+.current-nav::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    top: 69px;
+    background: #404bbf;
 }
 .nav-ref:hover, .nav-ref:focus {
     color: #404bbf;
@@ -117,6 +138,7 @@ img {
     text-decoration: none;
     font-size: 16px;
     letter-spacing: 0.02em;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-ref:hover, .contacts-ref:focus {
     color: #404bbf;
@@ -124,14 +146,21 @@ img {
 
 .hero {
     background-color: #2e2f42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7)), 
+    url(../images/people-office.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     color: #fff;
 
-    padding: 188px 0;  
+    padding: 188px 0;
+    
 }
 .hero .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .hero-title {
     font-weight: 700;
@@ -185,6 +214,20 @@ img {
 .features-item {
     width: calc((100% - 72px) / 4);
 }
+.features-icon-container {
+    display: flex;
+    height: 112px;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    justify-content: center;
+    align-content: center;
+
+    background: #f4f4fd;
+    margin-bottom: 8px;
+}
+.features-icon {
+    margin: auto auto;
+}
 .features-name {
     letter-spacing: 0.02em;
     color: #2e2f42;
@@ -219,6 +262,9 @@ img {
     width: calc((100% - 72px) / 4);
     border-radius: 0px 0px 4px 4px;
 }
+.team-card:hover .team-member-elipse {
+    background-color: #404bbf;
+}
 .team-card-text {
     padding: 32px 0;
 }
@@ -232,6 +278,24 @@ img {
     font-size: 16px;
     text-align: center;
     color: #434455;
+}
+.team-member-social {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 8px;
+}
+.team-member-elipse {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.team-member-link { 
 }
 
 .portfolio {
@@ -256,6 +320,31 @@ img {
 }
 .portfolio-card {
     width: calc((100% - 48px) / 3);
+}
+.portfolio-card-image {
+    position: relative;
+    overflow: hidden;
+}
+.overlay {
+    padding: 8px;
+    background-color: #3f51b5;
+    color: #fff;
+    font-family: sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-card:hover, .portfolio-card:hover {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+.portfolio-card:hover .overlay, .portfolio-card:hover .overlay {
+    transform: translateY(0);
 }
 .portfolio-card-text {
     padding: 32px 16px;
@@ -284,6 +373,12 @@ img {
 
     padding: 100px 0;
 }
+.footer .container {
+    display: flex;
+    gap: 120px;
+}
+.footer-logo-text {
+}
 .footer-logo {
     display: inline-block;
     margin-bottom: 16px;
@@ -297,4 +392,34 @@ img {
     color: #f4f4fd;
 
     max-width: 264px;
+}
+.footer-social {
+}
+.footer-social-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #fff;
+
+    margin-bottom: 16px;
+}
+.footer-social-icons {
+    display: flex;
+    gap: 16px;
+}
+.footer-social-elipse {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-social-elipse:hover, .footer-social-elipse:focus {
+    background-color: #31D0AA;
+}
+.footer-social-link {
 }

@@ -277,7 +277,7 @@ svg {
     border-radius: 0px 0px 4px 4px;
 }
 .team-card-text {
-    padding: 32px 16px;
+    padding: 32px 0;
 }
 .team-member-name {
     letter-spacing: 0.02em;
@@ -289,12 +289,15 @@ svg {
     font-size: 16px;
     text-align: center;
     color: #434455;
+    margin-bottom: 8px;
 }
-.team-member-social {
+.team-member-social-list {
     display: flex;
     gap: 24px;
     justify-content: center;
-    margin-top: 8px;
+}
+.team-member-social {
+    width: 40px;
     height: 40px;
 }
 .team-member-link {
@@ -350,7 +353,7 @@ svg {
     color: var(--light);
 
     padding: 40px 32px;
-    background-color: #3f51b5;
+    background-color: #4d5ae5;
 
     position: absolute;
     top: 0;
